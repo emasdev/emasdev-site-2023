@@ -9,15 +9,20 @@ import Navigation from './components/Navigation'
 
 import Services from './components/Technologies';
 import { LanguageProvider } from './hooks/context/useLanguage';
+import Products from "./components/Products";
+import { MenuProvider } from "./hooks/context/useMenu";
 
 const App = () => {
 
   return (
     <div className='App'>
       <LanguageProvider>
-        <Navigation />
-        <Banner />
-        <Services />
+        <MenuProvider>
+          <Navigation />
+          <Banner />
+          <Services />
+          <Products />
+        </MenuProvider>
       </LanguageProvider>
     </div>
   )

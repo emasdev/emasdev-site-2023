@@ -7,16 +7,14 @@ const MenuStore = createContext(null)
 
 
 export const MenuProvider = ({ children }) => {
-  const [selectedItem, setSelectedItem] = useState()
+  const [selectedItem, setSelectedItem] = useState("home")
 
   const handleItem = (item) => {
-    setSelectedItem(item)
+    if (selectedItem !== item) {
+      setSelectedItem(item)
+    }
+
   }
-
-  useEffect(() => {
-    handleItem("home")
-  }, [])
-
 
   return (
     <MenuStore.Provider value={{
@@ -28,6 +26,6 @@ export const MenuProvider = ({ children }) => {
   )
 }
 
-export function useLanguage() {
+export function useMenu() {
   return useContext(MenuStore)
 }

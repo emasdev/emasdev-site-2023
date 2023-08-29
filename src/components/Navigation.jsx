@@ -5,12 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from '../assets/img/logo-no-background.svg';
 import { useLanguage } from '../hooks/context/useLanguage';
 import { Translate } from 'react-bootstrap-icons';
+import { useMenu } from '../hooks/context/useMenu';
 
 function Navigation() {
-  const [activeLink, setActiveLink] = useState('home');
   const [scrolled, seScrolled] = useState(false);
   const { language, texts, toggleLanguage } = useLanguage()
-
+  const { selectedItem, handleItem } = useMenu()
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -23,25 +23,36 @@ function Navigation() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [])
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
-  }
+
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="lg" className={scrolled ? "scrolled pt-4" : ""}>
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} alt='Logo' className={scrolled ? "logo-scrolled" : ""} />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="basic-navbar-nav  pt-4">
           <span className='navbar-toggler-icon'></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end align-items-center'>
           <Nav className='text-align-end'>
-            <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>{texts.navigation.item1}</Nav.Link>
-            <Nav.Link href="#technologies" className={activeLink === 'technologies' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('technologies')}>{texts.navigation.item2}</Nav.Link>
-            <Nav.Link href="#products" className={activeLink === 'products' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('products')}>{texts.navigation.item3}</Nav.Link>
+            <Nav.Link href="#home"
+              className={selectedItem === 'home' ? 'active navbar-link' : 'navbar-link'}
+              onClick={() => handleItem('home')}>
+              {texts.navigation.item1}
+            </Nav.Link>
+            <Nav.Link href="#technologies"
+
+              className={selectedItem === 'technologies' ? 'active navbar-link' : 'navbar-link'}
+              onClick={() => handleItem('technologies')}>
+              {texts.navigation.item2}
+            </Nav.Link>
+            <Nav.Link href="#products"
+              className={selectedItem === 'products' ? 'active navbar-link' : 'navbar-link'}
+              onClick={() => handleItem('products')}>
+              {texts.navigation.item3}
+            </Nav.Link>
             <Nav.Item>
-              <div className='language'>
+              <div className='language my-3  mt-lg-0'>
                 <span className='px-2'><Translate size={17} /></span>
 
                 <div
