@@ -4,7 +4,7 @@ import 'animate.css';
 import './App.css'
 
 import Banner from './components/Banner';
-import Navigation from './components/Navigation'
+import Header from './components/Header'
 
 
 import Services from './components/Technologies';
@@ -18,7 +18,7 @@ const App = () => {
     <div className='App'>
       <LanguageProvider>
         <MenuProvider>
-          <Navigation />
+          <Header />
           <Banner />
           <Services />
           <Products />

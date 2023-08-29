@@ -7,7 +7,7 @@ import { useLanguage } from '../hooks/context/useLanguage';
 import { Translate } from 'react-bootstrap-icons';
 import { useMenu } from '../hooks/context/useMenu';
 
-function Navigation() {
+function Header() {
   const [scrolled, seScrolled] = useState(false);
   const { language, texts, toggleLanguage } = useLanguage()
   const { selectedItem, handleItem } = useMenu()
@@ -99,4 +99,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Header;
