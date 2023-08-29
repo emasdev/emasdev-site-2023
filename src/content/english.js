@@ -38,7 +38,7 @@ const EnglishTexts = {
     },
     mobile: {
       title: "Mobile application development",
-      text: "I can help you build your web application in stores (Google Play and Apple App Store) from configuration to upload to stores, database, shopping cart, calendar, storage, 2D and 3D graphics and interactivity, or whatever you can imagine within the reach of technology.",
+      text: "I can help you build your application in stores (Google Play and Apple App Store) from configuration to upload to stores, database, shopping cart, calendar, storage, 2D and 3D graphics and interactivity, or whatever you can imagine within the reach of technology.",
     },
   },
 };

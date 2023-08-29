@@ -38,7 +38,7 @@ const SpanishTexts = {
     },
     mobile: {
       title: "Desarrollo de aplicaciones móbiles",
-      text: "Te puedo ayudar en el despliegue a tiendas (Google Play y Apple App Store) de tu aplicación web desde la configuración para subir a tiendas, base de datos, carrito de compras, agenda, almacenamiento, graficos 2D, 3D e interactividad, o lo que puedas imaginar al alcance de la tecnonlogía.",
+      text: "Te puedo ayudar en el despliegue a tiendas (Google Play y Apple App Store) de tu aplicación desde la configuración para subir a tiendas, base de datos, carrito de compras, agenda, almacenamiento, graficos 2D, 3D e interactividad, o lo que puedas imaginar al alcance de la tecnonlogía.",
     },
   },
 };
