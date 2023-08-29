@@ -1,20 +1,24 @@
-import './App.css'
-import Banner from './components/Banner';
-import Navigation from './components/Navigation'
-// Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
-// Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import 'animate.css';
-import Services from './components/Services';
+import './App.css'
+
+import Banner from './components/Banner';
+import Navigation from './components/Navigation'
+
+
+import Services from './components/Technologies';
+import { LanguageProvider } from './hooks/context/useLanguage';
 
 const App = () => {
 
   return (
     <div className='App'>
-      <Navigation />
-      <Banner />
-      <Services />
+      <LanguageProvider>
+        <Navigation />
+        <Banner />
+        <Services />
+      </LanguageProvider>
     </div>
   )
 }

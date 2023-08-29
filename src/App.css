@@ -175,6 +175,29 @@ span.navbar-text {
     hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 
+.logo-scrolled {
+  width: 50%;
+}
+
+.navbar-nav {
+  text-align: end;
+}
+
+.navbar-nav .language {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 1.5625rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.9em;
+}
+
+.navbar-nav .pointer {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
 .navbar-text button {
   font-weight: 700;
   color: #fba458;
@@ -302,7 +325,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 }
 
 .banner .name {
-  color: #ffffff;
+  color: #e8e8e8;
 }
 
 .banner .text {
@@ -311,7 +334,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 }
 
 .banner p {
-  color: #b8b8b8;
+  color: #e8e8e8;
   font-size: 1.125em;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -322,7 +345,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   color: #fba458;
   font-weight: 700;
   font-size: 1.25em;
-  margin-top: 3.75rem;
+  margin-top: 2.75rem;
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -358,6 +381,38 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   }
 }
 
+@keyframes fire {
+  0% {
+    transform: translate(-50px, 0px);
+    transform: rotateZ(15deg);
+  }
+  50% {
+    transform: translate(50px, 0px);
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: translate(-50px, 0px);
+    transform: rotateZ(15deg);
+  }
+}
+
+.react-icon {
+  animation: rotate 24s linear infinite;
+}
+
+.firebase-icon {
+  animation: fire 12s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
@@ -386,11 +441,19 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 }
 
 .skill p {
-  color: #b8b8b8;
+  color: #e8e8e8;
   font-size: 1.125em;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   margin: 0.875rem 0 4.6875rem 0;
+}
+
+.skill li {
+  color: #e8e8e8;
+  /* font-size: 1.125em;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 0.875rem 0 4.6875rem 0; */
 }
 
 .skill-slider {
@@ -426,7 +489,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 }
 
 .project p {
-  color: #b8b8b8;
+  color: #e8e8e8;
   font-size: 1.125em;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -642,7 +705,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 .footer p {
   font-weight: 400;
   font-size: 0.875em;
-  color: #b8b8b8;
+  color: #e8e8e8;
   letter-spacing: 0.5px;
   margin-top: 1.25rem;
 }

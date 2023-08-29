@@ -4,19 +4,14 @@ import { ArrowRightCircle } from "react-bootstrap-icons"
 import headerImg from "../assets/img/Developer-activity.svg"
 import 'animate.css'
 import TrackVisibility from "react-on-screen"
+import { useLanguage } from "../hooks/context/useLanguage"
 
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = [
+  const { texts, language, toggleLanguage } = useLanguage()
 
-    "Desarrollador Web",
-    "Desarrollador de aplicaciones móviles`",
-    "Diseñador UI/UX",
-    "Servicios web via REST (integración y deployment)",
-    "Programador",
-  ];
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const period = 2000;
@@ -29,8 +24,8 @@ export const Banner = () => {
   }, [text])
 
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
+    let i = loopNum % texts.banner.tags.length;
+    let fullText = texts.banner.tags[i];
     let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
 
     setText(updatedText);
@@ -49,22 +44,35 @@ export const Banner = () => {
     }
   }
   return (
-    <section className="banner" id="home">
+    <section className="banner px-4" id="home">
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h1>{`Hola, Soy `}<span className="wrap name">Emanuel</span>{'\n'}</h1>
+                <div className={isVisible ? "animate__animated animate__pulse" : ""}>
+
+                  <h1>{texts.banner.text1}<span className="wrap name">Emanuel</span>{'\n'}</h1>
                   <span className="wrap text">{text}</span>
-                  <p>{`Soy un progamador fullstack que crea aplicaciones web y mobiles`}</p>
-                  <button onClick={() => console.log('connect')}>Contáctame <ArrowRightCircle size={25} /></button>
+                  <button onClick={() => {
+
+                    toggleLanguage()
+
+
+                  }}>
+                    {texts.banner.languageBtn}<ArrowRightCircle size={25} /></button>
+                  <p className="mt-4">{texts.banner.text2}</p>
+                  <button onClick={() => console.log('connect')}>{texts.banner.contactBtn} <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>
-          <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="header img" />
+          <Col xs={12} md={6} xl={5} className="mt-4">
+            <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__pulse" : ""}>
+                  <img src={headerImg} alt="header img" />
+                </div>}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
