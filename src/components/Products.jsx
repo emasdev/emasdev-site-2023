@@ -6,33 +6,25 @@ import { useLanguage } from '../hooks/context/useLanguage';
 import { useEffect, useRef } from 'react';
 import productImg1 from "../assets/img/Portfolio-website.svg"
 import productImg2 from "../assets/img/Web-shopping.svg"
+import { useMenu } from '../hooks/context/useMenu';
 
 
 
 export const Products = () => {
   const { texts } = useLanguage()
-  const viewRef = useRef()
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY >= viewRef.current.offsetTop) {
-        console.log("mostrar servicios")
-      } else {
-        console.log("mostrar home")
-      }
-
-    }
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [])
-  // console.log(texts.technologies.firebase)
-  // debugger
-
+  const { setSelectedItem } = useMenu()
 
   return (
-    <section className='products p-4' id='products' ref={viewRef}>
+    <section className='products p-4' id='products'>
+      <TrackVisibility>
+        {({ isVisible }) => {
+          if (isVisible) {
+            setSelectedItem("products")
+          }
+        }}
+      </TrackVisibility>
       <Container className="">
+
         <Row className='p-4 p-md-0'>
           <Col xs={12}>
             <TrackVisibility>

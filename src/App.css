@@ -331,6 +331,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 .banner .text {
   color: #e8e8e8;
   font-size: 1.7em;
+  height: 3em;
 }
 
 .banner p {
@@ -351,6 +352,16 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   align-items: center;
 }
 
+.banner a {
+  color: #fba458;
+  font-weight: 700;
+  font-size: 1.25em;
+  margin-top: 2.75rem;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+}
+
 .banner button svg {
   font-size: 1.5625em;
   margin-left: 0.625rem;
@@ -360,6 +371,17 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
 
 .banner button:hover svg {
   margin-left: 1.5625rem;
+}
+
+.banner a:hover svg {
+  margin-left: 1.5625rem;
+}
+
+.banner a svg {
+  font-size: 1.5625em;
+  margin-left: 0.625rem;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
 }
 
 .banner img {
@@ -640,6 +662,24 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+.contact p {
+  color: #e8e8e8;
+}
+
+.contact h2 {
+  font-size: 2.8125em;
+  font-weight: 700;
+}
+
+.scroll-btn {
+  color: #e8e8e8;
+  transition: transform 250ms;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-10px);
 }
 
 /*Projects Css*/

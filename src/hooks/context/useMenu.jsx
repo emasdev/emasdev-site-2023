@@ -10,7 +10,9 @@ export const MenuProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState("home")
 
   const handleItem = (item) => {
+    console.log(selectedItem + " : " + item)
     if (selectedItem !== item) {
+
       setSelectedItem(item)
     }
 
@@ -20,6 +22,7 @@ export const MenuProvider = ({ children }) => {
     <MenuStore.Provider value={{
       selectedItem,
       handleItem,
+      setSelectedItem,
     }}>
       {children}
     </MenuStore.Provider>

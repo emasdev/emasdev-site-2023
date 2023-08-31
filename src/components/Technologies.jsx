@@ -7,42 +7,33 @@ import colorSharp from "../assets/img/color-sharp.png"
 import TrackVisibility from 'react-on-screen';
 import { useLanguage } from '../hooks/context/useLanguage';
 import { useEffect, useRef } from 'react';
+import { useMenu } from '../hooks/context/useMenu';
 
 
 export const Technologies = () => {
   const { texts } = useLanguage()
-  const viewRef = useRef()
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY >= viewRef.current.offsetTop) {
-        console.log("mostrar servicios")
-      } else {
-        console.log("mostrar home")
-      }
-
-    }
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [])
-  // console.log(texts.technologies.firebase)
-  // debugger
-
+  const { setSelectedItem } = useMenu()
 
   return (
-    <section className='technology' id='technologies' ref={viewRef}>
+    <section className='technology' id='technologies'>
+
       <Container className="technology-bx">
         <Row className='align-items-center mx-sm-4 p-4'>
 
           <TrackVisibility>
-            {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__pulse" : ""}>
-                <h2 className='mb-4'>
-                  {texts.technologies.text1}
-                </h2>
-                <p className='p-4'>{texts.technologies.text2}</p>
-              </div>}
+            {({ isVisible }) => {
+              if (isVisible) {
+                setSelectedItem("technologies")
+              }
+              return (
+                <div className={isVisible ? "animate__animated animate__pulse" : ""}>
+                  <h2 className='mb-4'>
+                    {texts.technologies.text1}
+                  </h2>
+                  <p className='p-4'>{texts.technologies.text2}</p>
+                </div>
+              )
+            }}
           </TrackVisibility>
 
 
@@ -81,6 +72,7 @@ export const Technologies = () => {
           </Col>
         </Row>
       </Container>
+
       <img className='background-image-left' src={colorSharp} />
     </section>
   )

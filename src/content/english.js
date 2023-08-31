@@ -3,6 +3,7 @@ const EnglishTexts = {
     item1: "Home",
     item2: "Technologies",
     item3: "Products",
+    item4: "Contact",
     spanishBtn: "español",
     englishBtn: "english",
   },
@@ -40,6 +41,14 @@ const EnglishTexts = {
       title: "Mobile application development",
       text: "I can help you build your application in stores (Google Play and Apple App Store) from configuration to upload to stores, database, shopping cart, calendar, storage, 2D and 3D graphics and interactivity, or whatever you can imagine within the reach of technology.",
     },
+  },
+  contact: {
+    text1: "Contact",
+    text2:
+      "A website helps improve trust, experience and communication with your customers. And a mobile application offers another set of opportunities. ",
+    text3:
+      "If you have an interesting project that we can collaborate on, contact me and let us get to work.",
+    text4: "The digital world is already part of our daily lives.",
   },
 };
 

@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
-import { ArrowRightCircle } from "react-bootstrap-icons"
+import { ArrowRightCircle, ArrowBarDown, ChevronBarDown } from "react-bootstrap-icons"
 import headerImg from "../assets/img/Developer-activity.svg"
 import 'animate.css'
 import TrackVisibility from "react-on-screen"
 import { useLanguage } from "../hooks/context/useLanguage"
+import { useMenu } from "../hooks/context/useMenu"
 
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const { texts, language, toggleLanguage } = useLanguage()
+  const { setSelectedItem } = useMenu()
 
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
@@ -45,6 +47,13 @@ export const Banner = () => {
   }
   return (
     <section className="banner px-4" id="home">
+      <TrackVisibility>
+        {({ isVisible }) => {
+          if (isVisible) {
+            setSelectedItem("home")
+          }
+        }}
+      </TrackVisibility>
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
@@ -53,7 +62,7 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__pulse" : ""}>
 
                   <h1>{texts.banner.text1}<span className="wrap name">Emanuel</span>{'\n'}</h1>
-                  <span className="wrap text">{text}</span>
+                  <div className="wrap text">{text}</div>
                   <button onClick={() => {
 
                     toggleLanguage()
@@ -62,7 +71,10 @@ export const Banner = () => {
                   }}>
                     {texts.banner.languageBtn}<ArrowRightCircle size={25} /></button>
                   <p className="mt-4">{texts.banner.text2}</p>
-                  <button onClick={() => console.log('connect')}>{texts.banner.contactBtn} <ArrowRightCircle size={25} /></button>
+                  <a href="#contact">
+                    {texts.banner.contactBtn} <ArrowRightCircle size={25} />
+                  </a>
+                  {/* <button onClick={() => console.log('connect')}> </button> */}
                 </div>}
             </TrackVisibility>
           </Col>
@@ -73,6 +85,17 @@ export const Banner = () => {
                   <img src={headerImg} alt="header img" />
                 </div>}
             </TrackVisibility>
+          </Col>
+          <Col>
+            <div className="text-center mb-4 d-none d-md-block">
+
+              <a href="#technologies">
+                <ChevronBarDown size={80} className="scroll-btn" />
+              </a>
+
+
+            </div>
+
           </Col>
         </Row>
       </Container>

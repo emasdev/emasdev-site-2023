@@ -3,6 +3,7 @@ const SpanishTexts = {
     item1: "Inicio",
     item2: "Tecnologías",
     item3: "Productos",
+    item4: "Contacto",
     spanishBtn: "español",
     englishBtn: "english",
   },
@@ -40,6 +41,14 @@ const SpanishTexts = {
       title: "Desarrollo de aplicaciones móbiles",
       text: "Te puedo ayudar en el despliegue a tiendas (Google Play y Apple App Store) de tu aplicación desde la configuración para subir a tiendas, base de datos, carrito de compras, agenda, almacenamiento, graficos 2D, 3D e interactividad, o lo que puedas imaginar al alcance de la tecnonlogía.",
     },
+  },
+  contact: {
+    text1: "Contacto",
+    text2:
+      "Una página web ayuda a mejorar la confianza, experiencia y comunicación con tus clientes. Y una aplicación mobil ofrece otro abanico de posibilidades. ",
+    text3:
+      "Si tienes algún proyecto interesante en el que podamos colaborar ponte en contacto conmigo y comencemos a trabajar.",
+    text4: "El mundo digital ya es parte de nuestro día a día.",
   },
 };
 

@@ -11,6 +11,7 @@ import Services from './components/Technologies';
 import { LanguageProvider } from './hooks/context/useLanguage';
 import Products from "./components/Products";
 import { MenuProvider } from "./hooks/context/useMenu";
+import { Contact } from "./components/Contact";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
           <Banner />
           <Services />
           <Products />
+          <Contact />
         </MenuProvider>
       </LanguageProvider>
     </div>

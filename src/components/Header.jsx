@@ -8,15 +8,15 @@ import { Translate } from 'react-bootstrap-icons';
 import { useMenu } from '../hooks/context/useMenu';
 
 function Header() {
-  const [scrolled, seScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { language, texts, toggleLanguage } = useLanguage()
   const { selectedItem, handleItem } = useMenu()
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
-        seScrolled(true);
+        setScrolled(true);
       } else {
-        seScrolled(false);
+        setScrolled(false);
       }
     }
     window.addEventListener("scroll", onScroll);
@@ -51,24 +51,15 @@ function Header() {
               onClick={() => handleItem('products')}>
               {texts.navigation.item3}
             </Nav.Link>
+            <Nav.Link href="#contact"
+              className={selectedItem === 'contact' ? 'active navbar-link' : 'navbar-link'}
+              onClick={() => handleItem('contact')}>
+              {texts.navigation.item4}
+            </Nav.Link>
             <Nav.Item>
               <div className='language my-3  mt-lg-0'>
                 <span className='px-2'><Translate size={17} /></span>
 
-                <div
-                  onClick={() => {
-                    if (language === "spanish") {
-                      toggleLanguage()
-                    }
-
-
-                  }}
-                  className={language === 'spanish' ?
-                    'navbar-link pointer' :
-                    'navbar-link'}>
-                  {texts.navigation.spanishBtn}
-                </div>
-                <span className='px-2'> | </span>
                 <div
                   onClick={() => {
                     if (language === "english") {
@@ -80,15 +71,24 @@ function Header() {
                   className={language === 'english' ?
                     'navbar-link pointer' :
                     'navbar-link'}>
+                  {texts.navigation.spanishBtn}
+                </div>
+                <span className='px-2'> | </span>
+                <div
+                  onClick={() => {
+                    if (language === "spanish") {
+                      toggleLanguage()
+                    }
+
+
+                  }}
+                  className={language === 'spanish' ?
+                    'navbar-link pointer' :
+                    'navbar-link'}>
                   {texts.navigation.englishBtn}
                 </div>
               </div>
             </Nav.Item>
-
-
-
-
-
           </Nav>
           {/* <span className="navbar-text">
             <button className="vvd" onClick={() => console.log('connect')}><span>Let's Connect</span></button>
