@@ -10,7 +10,7 @@ import { useMenu } from '../hooks/context/useMenu';
 function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { language, texts, toggleLanguage } = useLanguage()
-  const { selectedItem, handleItem } = useMenu()
+  const { selectedItem, setSelectedItem } = useMenu()
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -37,23 +37,23 @@ function Header() {
           <Nav className='text-align-end'>
             <Nav.Link href="#home"
               className={selectedItem === 'home' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => handleItem('home')}>
+              onClick={() => setSelectedItem('home')}>
               {texts.navigation.item1}
             </Nav.Link>
             <Nav.Link href="#technologies"
 
               className={selectedItem === 'technologies' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => handleItem('technologies')}>
+              onClick={() => setSelectedItem('technologies')}>
               {texts.navigation.item2}
             </Nav.Link>
             <Nav.Link href="#products"
               className={selectedItem === 'products' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => handleItem('products')}>
+              onClick={() => setSelectedItem('products')}>
               {texts.navigation.item3}
             </Nav.Link>
             <Nav.Link href="#contact"
               className={selectedItem === 'contact' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => handleItem('contact')}>
+              onClick={() => setSelectedItem('contact')}>
               {texts.navigation.item4}
             </Nav.Link>
             <Nav.Item>

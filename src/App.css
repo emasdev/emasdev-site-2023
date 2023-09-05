@@ -352,7 +352,7 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   align-items: center;
 }
 
-.banner a {
+.banner-btn {
   color: #fba458;
   font-weight: 700;
   font-size: 1.25em;
@@ -362,18 +362,18 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   align-items: center;
 }
 
-.banner button svg {
+.banner-btn svg {
   font-size: 1.5625em;
   margin-left: 0.625rem;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
 
-.banner button:hover svg {
+.banner-btn:hover svg {
   margin-left: 1.5625rem;
 }
 
-.banner a:hover svg {
+.banner-btn:hover svg {
   margin-left: 1.5625rem;
 }
 
@@ -401,6 +401,15 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
     transform: translate(-20px, -20px);
     transform: rotateZ(-15deg);
   }
+}
+
+.scroll-btn {
+  color: #e8e8e8;
+  transition: transform 250ms;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-10px);
 }
 
 @keyframes fire {
@@ -668,18 +677,13 @@ nav.navbar .navbar-toggler[arie-expand="true"] .navbar-toggler-icon {
   color: #e8e8e8;
 }
 
+.contact .info {
+  margin-left: 7px;
+}
+
 .contact h2 {
   font-size: 2.8125em;
   font-weight: 700;
-}
-
-.scroll-btn {
-  color: #e8e8e8;
-  transition: transform 250ms;
-}
-
-.scroll-btn:hover {
-  transform: translateY(-10px);
 }
 
 /*Projects Css*/

@@ -59,11 +59,12 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__pulse" : ""}>
+                isVisible &&
+                <div className={isVisible ? "animate__animated animate__pulse" : ""} >
 
                   <h1>{texts.banner.text1}<span className="wrap name">Emanuel</span>{'\n'}</h1>
                   <div className="wrap text">{text}</div>
-                  <button onClick={() => {
+                  <button className="banner-btn" onClick={() => {
 
                     toggleLanguage()
 
@@ -71,11 +72,11 @@ export const Banner = () => {
                   }}>
                     {texts.banner.languageBtn}<ArrowRightCircle size={25} /></button>
                   <p className="mt-4">{texts.banner.text2}</p>
-                  <a href="#contact">
+                  <a href="#contact" className="banner-btn">
                     {texts.banner.contactBtn} <ArrowRightCircle size={25} />
                   </a>
-                  {/* <button onClick={() => console.log('connect')}> </button> */}
-                </div>}
+                </div>
+              }
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5} className="mt-4">
@@ -87,9 +88,9 @@ export const Banner = () => {
             </TrackVisibility>
           </Col>
           <Col>
-            <div className="text-center mb-4 d-none d-md-block">
+            <div className="mb-4 d-none d-md-flex justify-content-center">
 
-              <a href="#technologies">
+              <a href="#technologies" className="text-center">
                 <ChevronBarDown size={80} className="scroll-btn" />
               </a>
 
@@ -99,7 +100,7 @@ export const Banner = () => {
           </Col>
         </Row>
       </Container>
-    </section>
+    </section >
   )
 }
 
