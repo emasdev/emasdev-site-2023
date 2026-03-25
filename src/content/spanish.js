@@ -41,6 +41,11 @@ const SpanishTexts = {
       title: "Desarrollo de aplicaciones móbiles",
       text: "Te puedo ayudar en el despliegue a tiendas (Google Play y Apple App Store) de tu aplicación desde la configuración para subir a tiendas, base de datos, carrito de compras, agenda, almacenamiento, graficos 2D, 3D e interactividad, o lo que puedas imaginar al alcance de la tecnonlogía.",
     },
+    spec: {
+      title: "Registro de pensamientos",
+      text: "Una herramienta para registrar y rastrear emociones y pensamientos, ayudando con la conciencia emocional y el manejo de la salud mental.",
+      button: "Pruébalo",
+    },
   },
   contact: {
     text1: "Contacto",

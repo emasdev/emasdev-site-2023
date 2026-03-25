@@ -41,6 +41,11 @@ const EnglishTexts = {
       title: "Mobile application development",
       text: "I can help you build your application in stores (Google Play and Apple App Store) from configuration to upload to stores, database, shopping cart, calendar, storage, 2D and 3D graphics and interactivity, or whatever you can imagine within the reach of technology.",
     },
+    spec: {
+      title: "Thought Record",
+      text: "A tool for recording and tracking emotions and thoughts, helping with emotional awareness and mental health management.",
+      button: "Try it out",
+    },
   },
   contact: {
     text1: "Contact",

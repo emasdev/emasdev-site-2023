@@ -72,6 +72,21 @@ button {
   background-color: transparent;
 }
 
+/* Bootstrap overrides */
+.btn-primary {
+  background-color: #fba458 !important;
+  border-color: #fba458 !important;
+  color: #121212 !important;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #e8a044 !important;
+  border-color: #e8a044 !important;
+  color: #121212 !important;
+}
+
 input:focus,
 textarea:focus,
 select:focus {

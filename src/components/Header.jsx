@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import logo from '../assets/img/logo-no-background.svg';
-import { useLanguage } from '../hooks/context/useLanguage';
-import { Translate } from 'react-bootstrap-icons';
-import { useMenu } from '../hooks/context/useMenu';
+import { useState, useEffect } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+
+import logo from "../assets/img/logo-no-background.svg";
+import { useLanguage } from "../hooks/context/useLanguage";
+import { Translate } from "react-bootstrap-icons";
+import { useMenu } from "../hooks/context/useMenu";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const { language, texts, toggleLanguage } = useLanguage()
-  const { selectedItem, setSelectedItem } = useMenu()
+  const { language, texts, toggleLanguage } = useLanguage();
+  const { selectedItem, setSelectedItem } = useMenu();
+
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
@@ -18,73 +20,105 @@ function Header() {
       } else {
         setScrolled(false);
       }
-    }
+    };
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled pt-4" : ""}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} alt='Logo' className={scrolled ? "logo-scrolled" : ""} />
+          <img
+            src={logo}
+            alt="Logo"
+            className={scrolled ? "logo-scrolled" : ""}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav  pt-4">
-          <span className='navbar-toggler-icon'></span>
+          <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end align-items-center'>
-          <Nav className='text-align-end'>
-            <Nav.Link href="#home"
-              className={selectedItem === 'home' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => setSelectedItem('home')}>
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-end align-items-center"
+        >
+          <Nav className="text-align-end">
+            <Nav.Link
+              href="#home"
+              className={
+                selectedItem === "home" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => setSelectedItem("home")}
+            >
               {texts.navigation.item1}
             </Nav.Link>
-            <Nav.Link href="#technologies"
-
-              className={selectedItem === 'technologies' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => setSelectedItem('technologies')}>
+            <Nav.Link
+              href="#technologies"
+              className={
+                selectedItem === "technologies"
+                  ? "active navbar-link"
+                  : "navbar-link"
+              }
+              onClick={() => setSelectedItem("technologies")}
+            >
               {texts.navigation.item2}
             </Nav.Link>
-            <Nav.Link href="#products"
-              className={selectedItem === 'products' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => setSelectedItem('products')}>
+            <Nav.Link
+              href="#products"
+              className={
+                selectedItem === "products"
+                  ? "active navbar-link"
+                  : "navbar-link"
+              }
+              onClick={() => setSelectedItem("products")}
+            >
               {texts.navigation.item3}
             </Nav.Link>
-            <Nav.Link href="#contact"
-              className={selectedItem === 'contact' ? 'active navbar-link' : 'navbar-link'}
-              onClick={() => setSelectedItem('contact')}>
+            <Nav.Link
+              href="#contact"
+              className={
+                selectedItem === "contact"
+                  ? "active navbar-link"
+                  : "navbar-link"
+              }
+              onClick={() => setSelectedItem("contact")}
+            >
               {texts.navigation.item4}
             </Nav.Link>
             <Nav.Item>
-              <div className='language my-3  mt-lg-0'>
-                <span className='px-2'><Translate size={17} /></span>
+              <div className="language my-3  mt-lg-0">
+                <span className="px-2">
+                  <Translate size={17} />
+                </span>
 
                 <div
                   onClick={() => {
                     if (language === "english") {
-                      toggleLanguage()
+                      toggleLanguage();
                     }
-
-
                   }}
-                  className={language === 'english' ?
-                    'navbar-link pointer' :
-                    'navbar-link'}>
+                  className={
+                    language === "english"
+                      ? "navbar-link pointer"
+                      : "navbar-link"
+                  }
+                >
                   {texts.navigation.spanishBtn}
                 </div>
-                <span className='px-2'> | </span>
+                <span className="px-2"> | </span>
                 <div
                   onClick={() => {
                     if (language === "spanish") {
-                      toggleLanguage()
+                      toggleLanguage();
                     }
-
-
                   }}
-                  className={language === 'spanish' ?
-                    'navbar-link pointer' :
-                    'navbar-link'}>
+                  className={
+                    language === "spanish"
+                      ? "navbar-link pointer"
+                      : "navbar-link"
+                  }
+                >
                   {texts.navigation.englishBtn}
                 </div>
               </div>
