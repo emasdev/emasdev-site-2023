@@ -4,9 +4,10 @@ import { appShell, card } from "./specStyles";
 import SpecHome from "./SpecHome";
 import NewRecordForm from "./NewRecordForm";
 import RecordDetail from "./RecordDetail";
+import HelpDetail from "./HelpDetail";
 
 export default function Spec() {
-  const [view, setView] = useState("home"); // home | new | detail
+  const [view, setView] = useState("home"); // home | new | detail | help
   const [records, setRecords] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("spec_records") || "[]");
@@ -84,6 +85,7 @@ export default function Spec() {
               onDelete={handleDelete}
             />
           )}
+          {view === "help" && <HelpDetail onBack={() => setView("home")} />}
         </div>
       </div>
     </>

@@ -83,7 +83,7 @@ function SpecHome({
       </div>
 
       {/* Records list */}
-      <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ flex: 1, overflowY: "auto", paddingBottom: 52 }}>
         {filtered.length === 0 && records.length === 0 && (
           <div style={{ textAlign: "center", paddingTop: 60 }}>
             <div style={{ fontSize: 40, marginBottom: 16 }}>🧠</div>
@@ -127,6 +127,36 @@ function SpecHome({
             }}
           />
         ))}
+      </div>
+
+      {/* Help button */}
+      <div
+        style={{ display: "flex", justifyContent: "flex-end", paddingTop: 12 }}
+      >
+        <button
+          onClick={() => setView("help")}
+          style={{
+            background: "transparent",
+            border: "1px solid #2a2a3e",
+            borderRadius: 999,
+            color: "#5a5a7a",
+            fontSize: 13,
+            padding: "7px 16px",
+            cursor: "pointer",
+            fontFamily: "inherit",
+            transition: "border-color .2s, color .2s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = "#fba458";
+            e.currentTarget.style.color = "#fba458";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = "#2a2a3e";
+            e.currentTarget.style.color = "#5a5a7a";
+          }}
+        >
+          ¿Cómo usarlo?
+        </button>
       </div>
     </div>
   );
