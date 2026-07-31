@@ -10,7 +10,7 @@ const EnglishTexts = {
   banner: {
     text1: "Hi, I'm ",
     text2:
-      "Fullstack developer creating succesful and well designed web and mobile apps",
+      "Software Architect with 15+ years designing and delivering scalable systems and production-grade applications",
     tags: [
       "Web Developer",
       "Mobile Developer`",

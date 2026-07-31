@@ -10,7 +10,7 @@ const SpanishTexts = {
   banner: {
     text1: "Hola, soy ",
     text2:
-      "Programador fullstack creando aplicaciones web y móbiles funcionales y bien diseñadas",
+      "Arquitecto de software con más de 15 años diseñando e implementando sistemas escalables y aplicaciones de producción",
     tags: [
       "Desarrollador Web",
       "Desarrollador de aplicaciones móviles`",
